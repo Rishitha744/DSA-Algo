@@ -1,0 +1,66 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+
+void insertionSort(int arr[],int n)
+{
+    for(int i=1;i<n;i++)
+    {
+        int key=arr[i];
+        int j=i-1;
+        
+        while (j>=0&&arr[j]>key)
+        {
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=key;
+    }
+}
+
+void printArray(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<endl;
+    }
+}
+
+int main()
+{
+   
+   cout<<"Enter number:";
+   
+   int n,i;
+   
+   cin>>n;
+   
+   int arr[n];
+   
+   cout<<"Enter array:";
+   
+   for(i=0;i<n;i++)
+   {
+       cin>>arr[i];
+   }
+   cout<<"Before Sorting:"<<endl;
+
+   printArray(arr,n);
+   
+   cout<<"After Sorting:"<<endl;
+   
+   insertionSort(arr,n);
+   
+   printArray(arr,n);
+   
+   
+
+    return 0;
+}
